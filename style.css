@@ -4,6 +4,7 @@
   --secondary-color: #fff;
   --primary-color: rgb(0, 51, 154);
   --primary-trans: rgba(0,0,10,.75);
+  --accent-color: rgb(66, 129, 255);
 }
 
 #root {
@@ -53,6 +54,16 @@ p {
 li {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+a, a:visited {
+  color: white;
+}
+
+a:hover {
+  color: var(--accent-color);
+  transition: all;
+  transition-duration: 1000ms;
 }
 
 .card {

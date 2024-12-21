@@ -50,6 +50,11 @@ p {
   line-height: 1.5rem;
 }
 
+li {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .card {
   border: 0.5px solid var(--secondary-color);
   padding: 36px 24px;

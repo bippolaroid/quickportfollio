@@ -1,94 +1,63 @@
-const OLLAMA_API_URL = "http://localhost:11434/api/generate";
-let sentence = getNewSentence();
-let sentenceArr = [];
-let counter = 0;
-const root = document.getElementById("root");
-let keysArr = [];
-const resetButton = document.createElement("button");
-resetButton.textContent = "Reset";
-resetButton.onclick = handleReset;
-root.after(resetButton);
+// index.js
+const root = document.getElementById('root');
 
-initializeSentence(sentence);
-
-async function getNewSentence() {
-  try {
-    const response = await fetch(OLLAMA_API_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        model: "llama3.1:8b",
-        prompt: "Generate a unique, short sentence using all letters of the alphabet. Don't use anything pre-existing. Respond only with the sentence without quotes.",
-        stream: false
-      }),
-    });
-
-    if (!response.ok) {
-      throw new Error("HTTP Error!");
-    }
-
-    const data = await response.json();
-    const newSentence = data.response.trim();
-    initializeSentence(newSentence);
-  } catch (err) {
-    console.error("Error fetching data: ", err);
-    alert("Failed to fetch a new sentence. Please try again.");
+class Project {
+  constructor(title, body, image, repoName, repoLink, live) {
+    this.title = title;
+    this.body = body;
+    this.image = image;
+    this.repo = {
+      name: repoName,
+      link: repoLink,
+    };
+    this.live = live || null;
   }
 }
 
-function initializeSentence(newSentence) {
-  // Clear existing sentence and reset counter
-  root.innerHTML = "";
-  sentence = newSentence;
-  sentenceArr = sentence.split("").map((item) => ({
-    letter: item,
-    status: 0,
-  }));
-  counter = 0;
+const data = [
+  new Project(
+    'Project 1',
+    'This is a description of project 1.',
+    'project-1.jpg',
+    'View on Github',
+    'https://github.com/user/project-1',
+    'https://user-project-1.herokuapp.com'
+  ),
+  new Project(
+    'Project 2',
+    'This is a description of project 2.',
+    'project-2.jpg',
+    'View Project',
+    'https://github.com/user/project-2',
+  )
+];
 
-  // Create spans for each letter
-  for (let i = 0; i < sentenceArr.length; i++) {
-    const letterSpan = document.createElement("span");
-    letterSpan.id = `letter-${i}`;
-    letterSpan.style.opacity = ".5";
-    if (i === 0) {
-      letterSpan.style.textDecoration = "underline";
-    }
-    letterSpan.textContent = sentenceArr[i].letter;
-    root.appendChild(letterSpan);
-  }
-
-  // Re-add keypress listener
-  document.addEventListener("keydown", handleKeyPress, { once: false });
+function renderProject(project) {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <img 
+      class="card__image" 
+      src="${project.image}" 
+      alt="${project.title}" 
+      loading="lazy" 
+      onerror="this.src='./files/fallback.png'; this.style.height='72px'; this.style.width='72px'; this.alt='Placeholder image';"
+    >
+    <h3 class="card__title">${typewriterEffect(project.title)}</h2>
+    <p class="card__body">${project.body}</p>
+    <div class="card__actions">
+      <a href="${project.repo.link}" target="_blank" tabindex="0">${project.repo.name}</a>
+      ${project.live ? `<a href="${project.live}" target="_blank" tabindex="0">Live Demo</a>` : ``}
+    </div>
+  `;
+  root.appendChild(card);
 }
 
-function logger() {
-  console.log(keysArr);
+function typewriterEffect(text) {
+  return text
+    .split('')
+    .map((char, index) => `${char}`)
+    .join('');
 }
 
-function handleKeyPress(e) {
-  if (e.key === sentenceArr[counter]?.letter) {
-    const letter = document.getElementById(`letter-${counter}`);
-    letter.style.opacity = "1";
-    letter.style.textDecoration = "none";
-    counter++;
-
-    if (counter < sentenceArr.length) {
-      const nextLetter = document.getElementById(`letter-${counter}`);
-      nextLetter.style.textDecoration = "underline";
-    }
-  }
-
-  if (counter === sentenceArr.length) {
-    console.log("Finished typing!");
-    document.removeEventListener("keydown", handleKeyPress);
-    alert("Great job! You've completed the sentence!");
-  }
-
-  keysArr.push({ key: e.key, time: `${Math.round(e.timeStamp / 1000)}` });
-}
-
-function handleReset() {
-  getNewSentence();
-  keysArr = [];
-}
+data.forEach(project => renderProject(project));

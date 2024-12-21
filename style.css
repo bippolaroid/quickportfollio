@@ -1,32 +1,68 @@
+/* style.css */
+:root {
+  --secondary-color: #fff;
+  --primary-color: #00339a;
+}
+
 body {
-    font-family: monospace;
-    color: white;
-    background-image: linear-gradient(to right, #f22232, #222ff2);
-    font-size: 1.75rem;
-    text-align: center;
-    max-width: 720px;
-    margin: 36px auto;
-  }
+  font-family: monospace;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  a {
-    background: none;
-    border: 1px solid white;
-    border-radius: 0.5rem;
-    color: white;
-    cursor: pointer;
-    font-family: monospace;
-    font-size: 1.75rem;
-    font-weight: bold;
-    padding: 1rem 1.5rem;
-    transition: background 1s, color 1s;
-  }
+h1 {
+  font-weight: normal;
+  font-size: 9rem;
+  padding-left: 36px;
+}
 
-  a:hover {
-    background: white;
-    color: black;
-    transition: background 1s, color 1s;
-  }
-  
-  div {
-    margin-bottom: 18px;
-  }
+h2 {
+  font-size: 3rem;
+  padding-left: 36px;
+  margin-top: -72px;
+  margin-bottom: 72px;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 3rem;
+}
+.card {
+  border: 0.5px solid var(--secondary-color);
+  padding: 36px;
+  margin: 0px 12px 36px 12px;
+  max-width: 1024px;
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.card__body {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.card__actions {
+  display: flex;
+  gap: 18px;
+}
+
+.card__actions a {
+  text-decoration: none;
+  font-size: 18px;
+  color: var(--primary-color);
+  border: 0.5px solid var(--secondary-color);
+  background: var(--secondary-color);
+  padding: 9px 18px;
+  transition: all;
+  transition-duration: 1000ms;
+}
+
+.card__actions a:hover {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}

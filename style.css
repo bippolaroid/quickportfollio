@@ -19,7 +19,7 @@ body {
   background-color: #00339a;
   background-image: url("/files/Artboard 1.png");
   background-size: cover;
-  background-position: center;
+  background-position: left;
   background-attachment: fixed;
   display: flex;
   align-items: center;

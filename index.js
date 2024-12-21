@@ -1,4 +1,3 @@
-// index.js
 const root = document.getElementById("root");
 
 class Project {
@@ -20,9 +19,9 @@ const test = [
     body: "We transformed a bold vision into reality, guiding it seamlessly from concept to execution and publication. Chubb entrusted us with the responsibility of introducing their innovative Risk Engineering Center, and we rose to the occasion by crafting a dynamic and impactful launch campaign. Through a fresh and engaging approach to their information strategy, we not only captured the essence of their vision but also elevated their messaging, setting a new standard for their brand's communication efforts.",
     content: "https://player.vimeo.com/video/742311376",
     button: {
-      name: "View Project",
+      name: "See More Work",
       link: "https://www.looney-advertising.com/chubb",
-    }
+    },
   },
   {
     title: "UX/Frontend // Luna",
@@ -31,17 +30,36 @@ const test = [
     button: {
       name: "View Github",
       link: "https://github.com/bippolaroid/luna-chat",
-    }
+    },
   },
-    {
-      title: "UX/Frontend // QuickPortfolio",
-      body: "A JSON CMS to showcase portfolio work at a moments notice.",
-      content: "<iframe style='max-height: 800px;height: 50vw;' src='./'></iframe>",
-      button: {
-        name: "View Github",
-        link: "https://github.com/bippolaroid/luna-chat",
-      }
-  }
+  {
+    title: "Live Production/Post // Benzel-Busch - F1 Monaco",
+    body: "In June 2024, Benzel-Busch Motor Car in Englewood, NJ, hosted an exclusive Monaco Grand Prix watch party for VIP AMG customers. The dealership was transformed to emulate the ambiance of the Monaco Grand Prix, with high-definition screens broadcasting the race live and AMG vehicles strategically displayed. We captured the event, focusing on key moments such as guest arrivals, interactions with AMG vehicles, and reactions during the race. Post-event, the footage was edited to produce a cohesive narrative, integrating audio elements and maintaining brand consistency. This event showcased Benzel-Busch's commitment to providing unique experiences for their VIP clientele, reinforcing the connection between the AMG brand and Formula 1 racing.",
+    content: "./files/BB203_MonacoGrandPrix_Recap-v1-r5-FINAL.mp4",
+    button: {
+      name: "See More Work",
+      link: "https://www.looney-advertising.com/benzel-busch",
+    },
+  },
+  {
+    title: "Production/Post // Bahlsen - Drone Snack Attack",
+    body: "In an innovative move to celebrate Bahlsen's new packaging launch, Looney Advertising orchestrated \"The Drone Snack Attack,\" an industry-first event where drones distributed free samples to real people. This creative approach not only showcased Bahlsen's commitment to engaging consumers in unique ways but also highlighted Looney's ability to execute groundbreaking marketing strategies that captivate and delight audiences.<br /><br />The event was nearly a year in the making, demonstrating the dedication and meticulous planning involved in bringing such a novel concept to life. By leveraging drone technology, the campaign created a memorable and interactive brand experience, effectively generating buzz and increasing brand visibility for Bahlsen in the competitive snack market. This successful collaboration between Bahlsen and Looney Advertising exemplifies how innovative marketing tactics can create impactful consumer experiences and elevate brand perception.",
+    content: "https://player.vimeo.com/video/809882535",
+    button: {
+      name: "See More Work",
+      link: "https://www.looney-advertising.com/chubb",
+    },
+  },
+  {
+    title: "UX/Frontend // QuickPortfolio",
+    body: "A JSON CMS to showcase portfolio work at a moments notice.",
+    content:
+      "<iframe style='max-height: 800px;height: 50vw;' src='./'></iframe>",
+    button: {
+      name: "View Github",
+      link: "https://github.com/bippolaroid/quickportfollio",
+    },
+  },
 ];
 
 const data = () => {
@@ -65,8 +83,13 @@ function renderProject(project) {
   var content = () => {
     if (project.content.includes("vimeo")) {
       return `<div style="filter: drop-shadow(3px 3px 3px #000); padding:56.25% 0 0 0;position:relative;"><iframe src="${project.content}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>`;
-    } else if(project.content.includes("iframe")) {
-      return `${project.content}`
+    } else if (project.content.includes("iframe")) {
+      return `${project.content}`;
+    } else if (project.content.includes("mp4")) {
+      return `<video width="100%" controls>
+  <source src="${project.content}" type="video/mp4">
+Your browser does not support the video tag.
+</video>`;
     } else {
       return `<img style="filter: drop-shadow(3px 3px 3px #000);" src=${project.content} alt=${project.title} loading="lazy" onerror="this.src='./files/fallback.png'; this.style.height='72px'; this.style.width='72px'; this.alt='Placeholder image';" />`;
     }

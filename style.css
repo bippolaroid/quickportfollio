@@ -54,6 +54,7 @@ p {
 li {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  line-height: 1.5rem;
 }
 
 a, a:visited {

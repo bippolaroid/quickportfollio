@@ -13,6 +13,7 @@ body {
   align-items: center;
 }
 
+<<<<<<< HEAD
 h1 {
   font-weight: normal;
   font-size: 9rem;
@@ -66,3 +67,27 @@ h3 {
   background: var(--primary-color);
   color: var(--secondary-color);
 }
+=======
+  button {
+    background: none;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 1.75rem;
+    font-weight: bold;
+    padding: 1rem 1.5rem;
+    transition: background 1s, color 1s;
+  }
+
+  button:hover {
+    background: white;
+    color: black;
+    transition: background 1s, color 1s;
+  }
+  
+  div {
+    margin-bottom: 18px;
+  }
+>>>>>>> parent of cdfd12a (added ai integration)

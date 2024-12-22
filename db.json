@@ -38,7 +38,7 @@
     {
       "title": "UX/Frontend // QuickPortfolio",
       "body": "A JSON CMS to showcase portfolio work at a moments notice.",
-      "content": "<iframe style='max-height: 800px;height: 50vw;' src='./'></iframe>",
+      "content": "./assets/quickportfolio.png",
       "button": {
         "name": "View Github",
         "link": "https://github.com/bippolaroid/quickportfollio"

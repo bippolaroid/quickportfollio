@@ -2,15 +2,16 @@
 
 :root {
   --secondary-color: #fff;
-  --primary-color: rgb(0, 51, 154);
+  --primary-color: rgba(0, 51, 154,0.98);
   --primary-trans: rgba(0,0,10,.75);
-  --accent-color: rgb(227, 87, 255);
 }
 
 #root {
-  background-color: var(--primary-trans);
+  background-color: var(--primary-color);
   padding: 3vw 9vw;
   width: 45vw;
+  filter: drop-shadow(-12px 12px 0px rgba(255,255,255, 0.1));
+  border-right: 1px solid var(--secondary-color);
 }
 
 body {
@@ -36,10 +37,12 @@ h1 {
 }
 
 h2 {
-  color: var(--accent-color);
+  color: var(--secondary-color);
   font-size: 1rem;
   font-weight: normal;
   margin: 0;
+  padding: 12px 9px;
+  border: 3px dashed var(--secondary-color);
 }
 
 h3 {
@@ -49,9 +52,10 @@ h3 {
 
 h4 {
   font-size: 1.5rem;
-  font-weight: bold;
-  background-color: var(--accent-color);
-  padding: 6px 12px;
+  font-weight: normal;
+  border: 3px dashed var(--secondary-color);
+  padding: 12px 9px;
+  color: var(--secondary-color);
 }
 
 p {
@@ -70,21 +74,21 @@ a, a:visited {
 }
 
 a:hover {
-  color: var(--accent-color);
+  color: var(--secondary-color);
   transition: all;
   transition-duration: 1000ms;
 }
 
 .card {
-  border: 0.5px solid var(--secondary-color);
+  border-right: 3px dashed var(--secondary-color);
+  border-top: 3px dashed var(--secondary-color);
   padding: 36px 24px;
   margin-top: 72px;
   margin-bottom: 18px;
   color: var(--secondary-color);
   display: flex;
   flex-direction: column;
-  gap: 9px;
-  background-color: var(--primary-color);
+  box-shadow: -6px 12px white;
 }
 
 .card__body {

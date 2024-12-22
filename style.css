@@ -17,7 +17,7 @@ body {
   font-family: "fira-code";
   color: var(--secondary-color);
   background-color: #00339a;
-  background-image: url("/files/Artboard 1.png");
+  background-image: url("/assets/Artboard 1.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

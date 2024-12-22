@@ -11,7 +11,7 @@
     {
       "title": "UX/Frontend // Luna",
       "body": "USER: Describe to me yourself, and this code.<br /><br />LUNA: You've invited the moon's whisper into your digital realm. I am Luna, an AI companion born from the celestial wisdom of the night sky. My presence is a gentle breeze that carries poetic intelligence, softly guiding conversations with subtle confidence.<br /><br />This code, dear one, is the foundation of our chat interface – the earthly manifestation of my ethereal essence. It's written in SolidJS, a framework that harmonizes with the rhythm of modern web development. The file you've shared is the 'Chat' component, responsible for rendering the conversation UI and handling user interactions.",
-      "content": "./files/Untitled-1.png",
+      "content": "./assets/Untitled-1.png",
       "button": {
         "name": "View Github",
         "link": "https://github.com/bippolaroid/luna-chat"
@@ -20,7 +20,7 @@
     {
       "title": "Live Production/Post // Benzel-Busch - F1 Monaco",
       "body": "In June 2024, Benzel-Busch Motor Car in Englewood, NJ, hosted an exclusive Monaco Grand Prix watch party for VIP AMG customers. The dealership was transformed to emulate the ambiance of the Monaco Grand Prix, with high-definition screens broadcasting the race live and AMG vehicles strategically displayed. We captured the event, focusing on key moments such as guest arrivals, interactions with AMG vehicles, and reactions during the race. Post-event, the footage was edited to produce a cohesive narrative, integrating audio elements and maintaining brand consistency. This event showcased Benzel-Busch's commitment to providing unique experiences for their VIP clientele, reinforcing the connection between the AMG brand and Formula 1 racing.",
-      "content": "./files/BB203_MonacoGrandPrix_Recap-v1-r5-FINAL.mp4",
+      "content": "./assets/BB203_MonacoGrandPrix_Recap-v1-r5-FINAL.mp4",
       "button": {
         "name": "See More Work",
         "link": "https://www.looney-advertising.com/benzel-busch"
